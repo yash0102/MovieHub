@@ -20,11 +20,11 @@
     <!-- search suggestions section start-->
     <div class="search-container d-inline justify-content-end align-content-end align-items-end">
       <div class="search-element d-inline">
-          <input class="form-control w-50 d-inline bg-dark text-light" type="search" placeholder="Search a movie..." aria-label="Search">
-          <button class="btn btn-outline-success ms-2" type="submit">Search</button>
+          <input class="form-control w-50 d-inline bg-dark text-light" type="search" placeholder="Search a movie..." aria-label="Search" onkeyup="findMovies()" onclick = "findMovies()">
+          <button class="btn btn-outline-success ms-2" type="submit" onclick = "findMovies()">Search</button>
           <!-- movie list container -->
-          <!-- <div class="search-list invisible bg-dark w-50">
-             <div class="search-list-item">
+          <div class="search-list bg-dark w-50">
+             <!-- <div class="search-list-item">
               <div class="search-item-thumbnail">
                 <img src="assets/images/sample_movie_poster.jpg">
               </div>
@@ -32,8 +32,8 @@
                 <h3>Guardians of the Galaxy Vol. 2</h3>
                 <p>2017</p>
               </div>
-            </div>           
-          </div>  -->
+            </div>  -->
+          </div> 
           <!-- movie list end -->
       </div>
     </div>
