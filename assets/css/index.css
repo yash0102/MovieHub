@@ -1,0 +1,250 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-image: url('/assets/images/body_background.png');
+    background-color: #000;
+    font-family: 'helvetica', sans-serif;
+  }
+
+ .logo p {
+    margin-left: 20px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+  }
+  
+  .logo span{
+    background-color: orange;
+    color: #000;
+    padding: 3px;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+
+
+  input {
+    margin-left: 16rem ;
+  }
+/* --md-dark-color: #1d1d1d;
+    --dark-color: #171717;
+    --light-dark-color: #292929;
+    --yellow-color: #d4aa11; */
+
+  .search-list{
+    position: absolute;
+    right: 8.3rem;
+    height: 70vh;
+    border-radius: 5px;
+    background-color: #1d1d1d;
+    max-height: 500px;
+    overflow-y: scroll;
+    z-index: 10;
+}
+.search-list .search-list-item{
+    padding: 0.5rem;
+    color: #fff;
+    cursor: pointer;
+    border-bottom: 1px solid silver;
+    transition: background-color 200ms ease;
+}
+.search-list .search-list-item:Hover{
+    background-color: #3C486B;
+}
+.search-list-item{
+    display: flex;
+    /* -webkit-box-align: center;
+        -ms-flex-align: center; */
+            align-items: center;
+}
+.search-item-thumbnail img{
+    width: 40px;
+    margin-right: 1rem;
+}
+.search-item-info h3{
+    font-weight: 600;
+    font-size: 1rem;
+}
+.search-item-info p{
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+    font-weight: 600;
+    opacity: 0.6;
+}
+
+/* thumbnail */
+.search-list::-webkit-scrollbar{
+    width: 4px;
+}
+.search-list::-webkit-scrollbar-thumb{
+    background-color: grey;
+    outline: none;
+    border-radius: 10px;
+}
+
+/* Movie Details section */
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.result-container{
+    padding: 3rem 0;
+}
+
+.movie-poster img{
+    max-width: 300px;
+    margin: 0 0 0 9rem;
+    border: 4px solid #fff;
+}
+
+.movie-info{
+    text-align: center;
+    color: #fff;
+    padding-top: 3rem;
+}
+
+/* Styling for movie info */
+
+.movie-title{
+    font-size: 2rem;
+    font-weight: bold;
+    color: #d4aa11; 
+}
+
+.movie-list-info{
+    list-style-type:none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    margin: 0;
+    /* background-color: red; */
+}
+
+.movie-info .year{
+    font-weight: 500;
+    /* background-color: #d4aa11; */
+}
+
+.movie-info .rated{
+    background-color: gold;
+    color: #000;
+    padding:0.4rem;
+    margin: 0 0.4rem;
+    border-radius: 3px;
+    font-weight: 600;
+}
+
+.movie-info .voted{
+    background-color: darkgray;
+    color: #000;
+    padding:0.4rem;
+    margin: 0 0.2rem;
+    border-radius: 3px;
+    font-weight: 600;
+}
+
+.movie-info .released{
+    font-size: 0.9 rem;
+    opacity: 0.8;
+}
+
+.movie-info .genre{
+    background-color: #3C486B;
+    display: inline-block;
+    padding: 0.2rem;
+    border-radius: 3px;
+}
+.movie-info .writer{
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+}
+
+
+
+.movie-info .plot{
+    max-width: 400px;
+    margin: 1rem auto;
+}
+.movie-info .language{
+    color: #d4aa11;
+    font-style: italic;
+}
+.movie-info .awards{
+    font-weight: 300;
+    font-size: 0.9rem;
+}
+.movie-info .awards i{
+    color: #d4aa11;
+    margin: 1rem 0.7rem 0 0;
+}
+
+@media(max-width: 450px){
+    .logo .d-inline {
+        font-size: 1.5rem;
+        margin-right: 2rem;
+        margin-bottom: 2rem;
+        /* background-color: #fff; */
+    }
+    .search-element .form-control{
+        display: block;
+        width: 90%;
+        margin: 0 20px;
+        color: red;
+        padding: 0.5rem 1rem;
+        background-color: #d4aa11;
+    }
+    .search-element h3{
+        font-size: 1.4rem;
+    }
+
+    .search-list .search-list-item{
+        width: 100%;
+    }
+  
+    .movie-list-info li:nth-child(2){
+        margin: 0.8rem 0;
+    }
+
+    .movie-poster img{
+        display: flex;
+        align-items: center;
+        width: 15rem;
+        /* margin-left: 4rem; */
+    }
+    .movie-title{
+        font-size: 1.5rem;
+    }
+}
+
+@media(min-width: 800px){
+    
+    .search-element h3{
+        margin-bottom: 0;
+    }
+    .result-grid{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .movie-info{
+        text-align: left;
+        padding-top: 0;
+    }
+    .movie-info .movie-list-info{
+        justify-content: flex-start;
+        padding-left: 0;
+    }
+    .movie-info .plot{
+        margin-left: 0;
+    }
+    .movie-info .writer{
+        padding-left: 0;
+        margin-left: 0;
+    }
+}
