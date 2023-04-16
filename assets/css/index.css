@@ -28,11 +28,11 @@ body{
   input {
     margin-left: 16rem ;
   }
-/* --md-dark-color: #1d1d1d;
-    --dark-color: #171717;
-    --light-dark-color: #292929;
-    --yellow-color: #d4aa11; */
 
+  ::placeholder{
+    color: #fff !important;
+  }
+  
   .search-list{
     position: absolute;
     right: 8.3rem;
@@ -86,11 +86,11 @@ body{
 
 /* Movie Details section */
 
-.container{
+/* .container{
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1rem;
-}
+} */
 
 .result-container{
     padding: 3rem 0;

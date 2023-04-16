@@ -62,5 +62,50 @@ function displayMovieList(movie){
 
         searchList.appendChild(movieListItem);
     }
+    loadMovieDetails();
 }
 
+function loadMovieDetails(){
+    const searchListMovie = searchList.querySelectorAll('.search-list-item');
+    searchListMovie.forEach(movie =>{
+        // console.log(movie);
+        movie.addEventListener('click', async () =>{
+            // console.log(movie.dataset.id);
+            searchList.classList.add('invisible');
+            movieSearchBox.value = "";
+            const res = await fetch(`http://www.omdbapi.com/?i=${movie.dataset.id}&apikey=8ca57d1b`);
+            const movieDetails = await res.json();
+            // console.log(movieDetails);
+            displayMovieDetails(movieDetails);
+        });
+    })
+}
+
+function displayMovieDetails(details){
+    resultGrid.innerHTML = ` <div class="movie-poster">
+    <img src="${details.Poster}">
+  </div>
+  <div class="movie-info">
+    <h3 class="movie-title">${details.Title}</h3>
+    <ul class="movie-list-info">
+      <li class="year">Year: ${details.Year}</li>
+      <li class="rated">IMDB: ${details.imdbRating}/10</li>
+      <li class="voted">Votes: ${details.imdbVotes}</li>
+      <li class="released">Released: ${details.Released}</li>
+    </ul>
+    <p class = "genre"><b>Genre:</b> ${details.Genre}</p>
+    <p class = "writer"><b>Writer:</b> ${details.Writer}</p>
+    <p class = "writer"><b>Director:</b>${details.Director}</p>
+    <p class = "actors"><b>Actors: </b>${details.Actors}</p>
+    <p class = "plot"><b>Plot:</b> ${details.Plot}</p>
+    <p class = "language"><b>Language:</b> ${details.Language}</p>
+    <p class = "awards"><b><i class = "fas fa-award"></i></b> ${details.Awards}</p>
+  </div> `;
+}
+
+
+window.addEventListener('click', (event)=>{
+    if(event.target.className !=  "form-control"){
+        searchList.classList.add('invisible');
+    }
+})
